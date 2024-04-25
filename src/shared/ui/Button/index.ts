@@ -1,4 +1,4 @@
-export { 
+export {
     Button,
     ButtonTheme,
-} from './ui/Button'
+} from './ui/Button';
