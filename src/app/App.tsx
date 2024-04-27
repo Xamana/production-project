@@ -13,14 +13,12 @@ const App = () => {
     const { theme } = useTheme();
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    <AppRouter />
-                    {t('asdasd')}
-                </div>
-            </Suspense>
+            <Navbar />
+            <div className="content-page">
+                <Sidebar />
+                <AppRouter />
+                {t('asdasd')}
+            </div>
         </div>
     );
 };

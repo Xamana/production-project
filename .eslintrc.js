@@ -44,6 +44,11 @@ module.exports = {
         ],
         'linebreak-style': 'off',
         'max-len': ['error', { ignoreComments: true, code: 150 }],
+        'react/self-closing-comp': ['warn', {
+            component: true,
+            html: true,
+        }],
+        'arrow-body-style': ['warn', 'as-needed'],
     },
     globals: {
         __IS_DEV__: true,
