@@ -1,18 +1,18 @@
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'app/provider/ThemProvider';
-import { Suspense } from 'react';
 import App from './app/App';
+import { ErrorBoundary } from './app/provider/ErrorBoundary';
 
 import './shared/config/i18n/i18n';
 
 render(
     <BrowserRouter>
-        <ThemeProvider>
-            <Suspense fallback={<span>...</span>}>
+        <ErrorBoundary>
+            <ThemeProvider>
                 <App />
-            </Suspense>
-        </ThemeProvider>
+            </ThemeProvider>
+        </ErrorBoundary>
     </BrowserRouter>,
     document.getElementById('root'),
 );

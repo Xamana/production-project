@@ -4,5 +4,7 @@
   "Язык": "English",
   "Страница не найденна": "Page Not found",
   "asdasd": "App",
-  "loading": "Loading"
+  "loading": "Loading",
+  "Ошибка приложения": "Something went wrong. Try to reload the page",
+  "Перезагрузить страницу": "Reload the page"
 }
