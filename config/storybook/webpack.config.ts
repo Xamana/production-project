@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack, { RuleSetRule } from 'webpack';
-import { BuildPaths } from '../build/types/config';
+import { BuildEnv, BuildPaths } from '../build/types/config';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
 export default ({ config }: {config: webpack.Configuration}) => {

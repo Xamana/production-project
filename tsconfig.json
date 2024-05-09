@@ -27,6 +27,7 @@
     "config/**/*.tsx",
     "scripts/**/*.ts",
     "utils/**/*.ts",
-    "server"
-, "config/storybook/preview.tsx"  ]
+    "server", 
+    "config/storybook/preview.tsx"
+  ]
 }

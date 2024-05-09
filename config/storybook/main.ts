@@ -1,3 +1,5 @@
+/** @format */
+
 import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
@@ -9,26 +11,20 @@ const config: StorybookConfig = {
         '@storybook/addon-essentials',
         '@chromatic-com/storybook',
         '@storybook/addon-interactions',
+        '@storybook/addon-webpack5-compiler-babel',
+        '@storybook/addon-jsx',
+
     ],
     framework: {
         name: '@storybook/react-webpack5',
         options: {
             builder: {
-                useSWC: true,
             },
         },
     },
-    swc: () => ({
-        jsc: {
-            transform: {
-                react: {
-                    runtime: 'automatic',
-                },
-            },
-        },
-    }),
     docs: {
         autodocs: 'tag',
     },
 };
+
 export default config;
