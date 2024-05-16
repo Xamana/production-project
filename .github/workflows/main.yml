@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
-  pipline:
+  pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -19,14 +19,14 @@ jobs:
         with:
           node-version: ${{ matrix.name-version }}
       - name: install modules 
-        run: npm install --legacy-peer-deps
+        run: npm install --force
       - name: build production project
         run: npm run build:prod
       - name: linting typescript
         run: npm run lint:ts
       - name: linting css
         run: npm run lint:scss
-      - name: testing unit
+      - name: unit testing
         run: npm run test:unit
       - name: build storybook
         run: npm run storybook:build
