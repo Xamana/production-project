@@ -1,8 +1,11 @@
 {
   "Abbout": "Abbout",
+  "About": "About",
   "Main": "Main",
   "Throw Error": "Throw Error",
   "Toggle": "Toggle",
+  "decrement": "decrement",
+  "increment": "increment",
   "Войти": "Войти",
   "О сайте": "О сайте",
   "Обновить страницу": "Обновить страницу",
