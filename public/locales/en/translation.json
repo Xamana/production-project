@@ -7,5 +7,7 @@
   "asdasd": "App",
   "loading": "Loading",
   "Ошибка приложения": "Something went wrong. Try to reload the page",
-  "Перезагрузить страницу": "Reload the page"
+  "Перезагрузить страницу": "Reload the page",
+  "Login": "Login",
+  "Password": "Password"
 }
