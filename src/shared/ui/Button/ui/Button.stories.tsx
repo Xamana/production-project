@@ -298,3 +298,18 @@ export const CircleSizeXL: Story = {
         ),
     ],
 };
+
+export const Disabled: Story = {
+    args: {
+        children: '>',
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+        disabled: true,
+    },
+    decorators: [
+        (Story) => (
+            <ThemeDecorator theme={Theme.LIGHT}>
+                <Story />
+            </ThemeDecorator>
+        ),
+    ],
+};
