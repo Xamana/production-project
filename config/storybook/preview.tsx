@@ -6,6 +6,8 @@ import StyleDecorator from '../../src/shared/config/storybook/StyleDecorator/Sty
 import ThemeDecorator from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import RouterDecorator from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import ReactDecorator from '../../src/shared/config/storybook/ReactDecorator/ReactDecorator';
+import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { TranslationDecorator } from '../../src/shared/config/storybook/TranslationDecorator/TranslationDecorator';
 import { Theme } from '../../src/app/provider/ThemProvider';
 
 const preview: Preview = {
@@ -20,13 +22,17 @@ const preview: Preview = {
     decorators: [
         (Story) => (
             <ReactDecorator>
-                <RouterDecorator>
-                    <ThemeDecorator theme={Theme.LIGHT}>
-                        <StyleDecorator>
-                            <Story />
-                        </StyleDecorator>
-                    </ThemeDecorator>
-                </RouterDecorator>
+                <TranslationDecorator>
+                    <StoreDecorator>
+                        <RouterDecorator>
+                            <ThemeDecorator theme={Theme.LIGHT}>
+                                <StyleDecorator>
+                                    <Story />
+                                </StyleDecorator>
+                            </ThemeDecorator>
+                        </RouterDecorator>
+                    </StoreDecorator>
+                </TranslationDecorator>
             </ReactDecorator>
         ),
     ],

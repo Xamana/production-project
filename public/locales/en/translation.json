@@ -9,5 +9,9 @@
   "Ошибка приложения": "Something went wrong. Try to reload the page",
   "Перезагрузить страницу": "Reload the page",
   "Login": "Login",
-  "Password": "Password"
+  "Password": "Password",
+  "Форма авторизации": "Auth form",
+  "Вы ввели неверный логин или пароль": "uncorrect username or password",
+  "Войти": "Login",
+  "Выйти": "Logout"
 }

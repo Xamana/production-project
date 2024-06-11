@@ -1,15 +1,19 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/provider/ThemProvider';
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { AppRouter } from 'app/provider/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { Modal } from 'shared/ui/Modal';
+import { useDispatch } from 'react-redux';
+import { userActions } from 'entities/User';
 
 const App = () => {
     const { theme } = useTheme();
+    const dispatch = useDispatch();
 
-    const [isOpen, setIsOpen] = useState(false);
+    useEffect(() => {
+        dispatch(userActions.initAuthData());
+    }, [dispatch]);
 
     return (
         <div className={classNames('app', {}, [theme])}>
