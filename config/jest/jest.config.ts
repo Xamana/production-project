@@ -37,6 +37,7 @@ export default {
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        '^axios$': require.resolve('axios'),
     },
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
