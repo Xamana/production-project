@@ -55,7 +55,7 @@ module.exports = {
     },
     globals: {
         __IS_DEV__: true,
-        __API__,
+        __API__: true,
     },
     overrides: [
         {
