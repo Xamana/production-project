@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from 'app/provider/ThemProvider';
+import { fn } from '@storybook/test';
 import LoginForm from './LoginForm';
 
 const meta = {
@@ -19,10 +20,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-    args: {},
+    args: { onSuccess: () => fn() },
 };
 export const Dark: Story = {
-    args: {},
+    args: { onSuccess: () => fn() },
     decorators: [
         (Story) => (
             <StoreDecorator state={{ loginForm: { username: '123', password: '123' } }}>
@@ -35,7 +36,7 @@ export const Dark: Story = {
 };
 
 export const isLoading: Story = {
-    args: {},
+    args: { onSuccess: () => fn() },
     decorators: [
         (Story) => (
             <StoreDecorator state={{ loginForm: { isLoading: true } }}>
@@ -48,7 +49,7 @@ export const isLoading: Story = {
 };
 
 export const Error: Story = {
-    args: {},
+    args: { onSuccess: () => fn() },
     decorators: [
         (Story) => (
             <StoreDecorator state={{ loginForm: { error: 'Error' } }}>
