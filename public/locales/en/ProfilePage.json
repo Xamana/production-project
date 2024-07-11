@@ -1,4 +1,8 @@
 {
-    "Профиль": "Profile",
-    "Редактировать": "Change"
+  "Профиль": "Profile",
+  "Редактировать": "Change",
+  "ProfilePage.Error loading profile": "An error occurred while loading the user",
+  "ProfilePage.Description Error Text": "Try refreshing the page",
+  "Cancel": "Cancel",
+  "ProfilePage.Save": ""
 }

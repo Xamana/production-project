@@ -26,12 +26,12 @@
     }
   ],
   "profile": {
-    "first": "Михаил",
-    "lastname": "Xamana",
-    "age": 22,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
+    "first": "Михаил123",
+    "lastname": "Xamana123",
+    "age": 22123,
+    "currency": "USD",
+    "country": "Belarus",
+    "city": "Moscow123",
     "username": "admin",
     "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
   }

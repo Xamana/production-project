@@ -23,15 +23,15 @@ const preview: Preview = {
         (Story) => (
             <ReactDecorator>
                 <TranslationDecorator>
-                    <StoreDecorator>
-                        <RouterDecorator>
+                    <RouterDecorator>
+                        <StoreDecorator>
                             <ThemeDecorator theme={Theme.LIGHT}>
                                 <StyleDecorator>
                                     <Story />
                                 </StyleDecorator>
                             </ThemeDecorator>
-                        </RouterDecorator>
-                    </StoreDecorator>
+                        </StoreDecorator>
+                    </RouterDecorator>
                 </TranslationDecorator>
             </ReactDecorator>
         ),
