@@ -1,8 +1,13 @@
 {
   "Профиль": "Profile",
   "Редактировать": "Change",
-  "ProfilePage.Error loading profile": "An error occurred while loading the user",
-  "ProfilePage.Description Error Text": "Try refreshing the page",
+  "Error loading profile": "An error occurred while loading the user",
+  "Description Error Text": "Try refreshing the page",
   "Cancel": "Cancel",
-  "ProfilePage.Save": ""
+  "Save": "Save",
+  "Server error": "Server Error",
+  "Country error": "You entered an incorrect country",
+  "Age error": "You entered an incorrect age",
+  "Name error": "You entered an incorrect first or last name",
+  "Data error": "Data error"
 }
