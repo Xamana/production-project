@@ -54,13 +54,14 @@ module.exports = {
         'no-param-reassign': 'off',
         '@typescript-eslint/no-unused-vars': [
             'warn',
-            { 'argsIgnorePattern': "^_" }
+            { argsIgnorePattern: '^_' },
         ],
         'no-undef': 'off',
     },
     globals: {
         __IS_DEV__: true,
         __API__: true,
+        __PROJECT__: true,
     },
     overrides: [
         {

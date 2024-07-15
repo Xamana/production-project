@@ -13,8 +13,12 @@ const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-export const StoreDecorator = ({ children, state }:Props, asyncReducers: ReducersList) => (
-    <StoreProvider initialState={state} asyncRedusers={{ ...defaultAsyncReducers, ...asyncReducers }}>
-        {children}
-    </StoreProvider>
-);
+export const StoreDecorator = ({ children, state }:Props, asyncReducers: ReducersList) => {
+    console.log(state, 'state');
+    
+    return (
+        <StoreProvider initialState={state} asyncRedusers={{ ...defaultAsyncReducers, ...asyncReducers }}>
+            {children}
+        </StoreProvider>
+    )
+};

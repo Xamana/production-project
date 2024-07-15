@@ -51,7 +51,9 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     };
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onChangeFirstname = useCallback((value?: string) => {
@@ -86,6 +88,8 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({ country }));
     }, [dispatch]);
 
+    console.log(formData)
+    
     return (
         <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.ProfilePage, {}, [className])}>
