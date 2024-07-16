@@ -5,7 +5,7 @@ import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorato
 import { Theme } from 'app/provider/ThemProvider';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { avatar } from 'shared/assets/tests/storybook.png';
+import avatar from 'shared/assets/tests/storybook.png';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ProfilePage from './ProfilePage';
 
@@ -31,6 +31,7 @@ const state = {
             city: 'asd',
             currency: Currency.EUR,
             first: 'asd',
+            avatar,
         },
     },
 };

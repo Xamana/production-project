@@ -26,9 +26,9 @@
     }
   ],
   "profile": {
-    "first": "Михаил123",
+    "first": "",
     "lastname": "Xamana123",
-    "age": 22123,
+    "age": null,
     "currency": "USD",
     "country": "Belarus",
     "city": "Moscow123",

@@ -10,6 +10,7 @@ import {
     getProfileForm,
     getProfileIsLoading,
     getProfileReadonly,
+    getProfileValidateErrors,
     profileActions,
     ProfileCard,
     profileReducer,
@@ -17,6 +18,8 @@ import {
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextTheme } from 'shared/ui/Text';
+import { ValidateProfileError } from 'entities/Profile/module/types/profile';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 import cls from './ProfilePage.module.scss';
@@ -37,6 +40,15 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    const validateErrorTranslates = {
+        [ValidateProfileError.SERVER_ERROR]: t(ValidateProfileError.SERVER_ERROR),
+        [ValidateProfileError.INCORRECT_AGE]: t(ValidateProfileError.INCORRECT_AGE),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t(ValidateProfileError.INCORRECT_USER_DATA),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t(ValidateProfileError.INCORRECT_COUNTRY),
+        [ValidateProfileError.NO_DATA]: t(ValidateProfileError.NO_DATA),
+    };
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
@@ -80,6 +92,9 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.ProfilePage, {}, [className])}>
                 <ProfilePageHeader />
+                {validateErrors?.length && validateErrors.map((err) => (
+                    <Text theme={TextTheme.ERROR} text={validateErrorTranslates[err]} key={err} />
+                ))}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}
