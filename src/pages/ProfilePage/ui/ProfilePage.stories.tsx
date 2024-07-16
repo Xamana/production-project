@@ -42,7 +42,7 @@ export const Light: Story = {
             <ThemeDecorator theme={Theme.LIGHT}>
                 <StoreDecorator state={state}>
                     <Story />
-                </StoreDecorator>                    
+                </StoreDecorator>
             </ThemeDecorator>
         ),
     ],
