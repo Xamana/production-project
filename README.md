@@ -4,6 +4,7 @@
 
 Проект собранн самостоятельно с настройкой Webpack eslint tsconfig и других систем.\
 В проекте используется архитектура Feature-Sliced Design.\
+Дополнительно в проекте используется CI CD pipline от github в дальнейшем буду переходить на husky.
 
 ## Available Scripts
 
