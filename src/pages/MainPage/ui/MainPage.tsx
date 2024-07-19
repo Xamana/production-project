@@ -12,7 +12,7 @@ const MainPage = () => {
     };
 
     return (
-        <div>
+        <div style={{ color: 'white' }}>
             {t('О сайте')}
             <Input
                 onChange={onChange}
