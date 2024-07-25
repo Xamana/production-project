@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ArticlesPage from './ArticlesPage';
+import { ArticleCodeBlockComponent } from './ArticleCodeBlockComponent';
 
 const meta = {
-    title: 'page/ArticlesPage',
-    component: ArticlesPage,
+    title: 'entries/ArticleCodeBlockComponent',
+    component: ArticleCodeBlockComponent,
     parameters: {
         layout: 'padded',
     },
@@ -12,7 +12,7 @@ const meta = {
     //     backgroundColor: 'red',
     //   },
     args: undefined,
-} satisfies Meta<typeof ArticlesPage>;
+} satisfies Meta<typeof ArticleCodeBlockComponent>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

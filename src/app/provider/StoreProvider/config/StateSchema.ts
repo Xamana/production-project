@@ -9,8 +9,8 @@ import { AxiosInstance } from 'axios';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
-import { Dispatch } from 'redux';
 import { NavigateOptions, To } from 'react-router-dom';
+import { ArticleDetailsSchema } from 'entities/Article';
 
 export interface CounterState {
     value: number;
@@ -19,8 +19,10 @@ export interface CounterState {
 export interface StateSchema {
     counter: CounterState;
     user: UserSchema;
+    // Async reducers
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
+    articleDetails?: ArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
