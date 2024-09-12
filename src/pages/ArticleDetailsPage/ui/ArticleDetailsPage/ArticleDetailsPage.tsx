@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
+import { Text } from 'shared/ui/Text';
+import { CommentList } from 'entities/Comment';
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -12,7 +14,7 @@ interface ArticleDetailsPageProps {
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('ArticleDetailsPage');
-    const { id } = useParams<{id: string}>();
+    const { id = '1' } = useParams<{id: string}>();
 
     if (!id) {
         return (
@@ -24,7 +26,11 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     }
 
     return (
-        <ArticleDetails id={id} />
+        <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <ArticleDetails id={id} />
+            <Text text={t('Коментарии')} />
+            <CommentList />
+        </div>
     );
 };
 

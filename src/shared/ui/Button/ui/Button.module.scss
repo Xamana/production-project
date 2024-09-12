@@ -2,6 +2,14 @@
     cursor: pointer;
     color: var(--primary-color);
     padding: 10px 15px;
+
+    &:hover {
+        opacity: 0.7;
+        /* stylelint-disable-next-line alpha-value-notation */
+        fill-opacity: 0.8;
+        /* stylelint-disable-next-line alpha-value-notation */
+        stroke-opacity: 0.8;
+    }
 }
 
 .clear,

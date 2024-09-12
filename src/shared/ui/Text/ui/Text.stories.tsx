@@ -3,7 +3,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/provider/ThemProvider';
-import { Text, TextTheme } from './Text';
+import { Text, TextSize, TextTheme } from './Text';
 
 const meta = {
     title: 'shared/Text',
@@ -70,6 +70,50 @@ export const onlyTextDark: Story = {
     args: {
         title: 'lorem ipsum dolor sit amet',
         text: 'Lorem Ipsum Ipsum Ipsum Ipsum Ips',
+    },
+    decorators: [
+        (Story) => (
+            <ThemeDecorator theme={Theme.DARK}>
+                <Story />
+            </ThemeDecorator>
+        ),
+    ],
+};
+export const sizeM: Story = {
+    args: {
+        title: 'lorem ipsum dolor sit amet',
+        text: 'Lorem Ipsum Ipsum Ipsum Ipsum Ips',
+        size: TextSize.M,
+    },
+    decorators: [
+        (Story) => (
+            <ThemeDecorator theme={Theme.DARK}>
+                <Story />
+            </ThemeDecorator>
+        ),
+    ],
+};
+
+export const sizeL: Story = {
+    args: {
+        title: 'lorem ipsum dolor sit amet',
+        text: 'Lorem Ipsum Ipsum Ipsum Ipsum Ips',
+        size: TextSize.L,
+    },
+    decorators: [
+        (Story) => (
+            <ThemeDecorator theme={Theme.DARK}>
+                <Story />
+            </ThemeDecorator>
+        ),
+    ],
+};
+
+export const sizeXL: Story = {
+    args: {
+        title: 'lorem ipsum dolor sit amet',
+        text: 'Lorem Ipsum Ipsum Ipsum Ipsum Ips',
+        size: TextSize.XL,
     },
     decorators: [
         (Story) => (
