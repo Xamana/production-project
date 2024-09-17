@@ -38,6 +38,7 @@ export const profileSlice = createSlice({
                 state.isLoading = true;
             })
             .addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
+                console.log('12', action.payload);
                 state.isLoading = false;
                 state.data = action.payload;
                 state.form = action.payload;

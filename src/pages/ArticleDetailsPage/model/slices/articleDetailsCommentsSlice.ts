@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 import {
     createEntityAdapter,
     createSlice,
@@ -8,6 +9,7 @@ import { StateSchema } from 'app/provider/StoreProvider';
 import { Comment } from 'entities/Comment';
 import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleid/fetchCommentsByArticleid';
+import { addCommentForArticle } from '../services/addCommentForArticle/addCommentForArticle';
 
 const commentsAdapter = createEntityAdapter<Comment>({
     selectId: (comment) => comment.id,
