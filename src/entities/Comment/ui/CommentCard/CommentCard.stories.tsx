@@ -4,32 +4,38 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from 'app/provider/ThemProvider';
-import AddCommentForm from './AddCommentForm';
+import { CommentCard } from './CommentCard';
 
 const meta = {
-    title: 'features/AddCommentForm',
-    component: AddCommentForm,
+    title: 'entities/Comment/CommentCard',
+    component: CommentCard,
     parameters: {
         layout: 'fullscreen',
     },
     tags: ['autodocs'],
-} satisfies Meta<typeof AddCommentForm>;
+} satisfies Meta<typeof CommentCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const comment = {
+    id: '1',
+    text: 'hello world',
+    user: { id: '1', username: 'Vasya' },
+};
+
 export const Light: Story = {
     args: {
-        onSendComment: () => 'onSendComment',
+        comment,
     },
 };
 export const Dark: Story = {
     args: {
-        onSendComment: () => 'onSendComment',
+        comment,
     },
     decorators: [
         (Story) => (
-            <StoreDecorator state={{ loginForm: { username: '123', password: '123' } }}>
+            <StoreDecorator>
                 <ThemeDecorator theme={Theme.DARK}>
                     <Story />
                 </ThemeDecorator>
@@ -38,9 +44,10 @@ export const Dark: Story = {
     ],
 };
 
-export const Error: Story = {
+export const Loading: Story = {
     args: {
-        onSendComment: () => undefined,
+        comment,
+        isLoading: true,
     },
     decorators: [
         (Story) => (

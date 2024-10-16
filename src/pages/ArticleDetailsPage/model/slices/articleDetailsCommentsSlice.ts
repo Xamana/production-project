@@ -1,14 +1,15 @@
-/* eslint-disable no-debugger */
-import {
-    createEntityAdapter,
-    createSlice,
-    PayloadAction,
-} from '@reduxjs/toolkit';
+/**
+ * eslint-disable no-debugger
+ *
+ * @format
+ */
+
+import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { StateSchema } from 'app/provider/StoreProvider';
 import { Comment } from 'entities/Comment';
 import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
-import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleid/fetchCommentsByArticleid';
+import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleid/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../services/addCommentForArticle/addCommentForArticle';
 
 const commentsAdapter = createEntityAdapter<Comment>({
@@ -27,19 +28,21 @@ export const articleDetailsCommentsSlice = createSlice({
         ids: [],
         entities: {},
     }),
-    reducers: {
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
-        // Запрос на сервер для получения данных пользователя
+            // Запрос на сервер для получения данных пользователя
             .addCase(fetchCommentsByArticleId.pending, (state, _) => {
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetchCommentsByArticleId.fulfilled, (state, action: PayloadAction<Comment[]>) => {
-                state.isLoading = false;
-                commentsAdapter.setAll(state, action.payload);
-            })
+            .addCase(
+                fetchCommentsByArticleId.fulfilled,
+                (state, action: PayloadAction<Comment[]>) => {
+                    state.isLoading = false;
+                    commentsAdapter.setAll(state, action.payload);
+                },
+            )
             .addCase(fetchCommentsByArticleId.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;

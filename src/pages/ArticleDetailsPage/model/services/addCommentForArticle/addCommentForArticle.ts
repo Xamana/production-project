@@ -1,15 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { getUserAuthData } from 'entities/User';
 import { ThunkConfig } from 'app/provider/StoreProvider/config/StateSchema';
 import { Comment } from 'entities/Comment';
-import { getUserAuthData } from 'entities/User';
 import { getArticleDetailsData } from 'entities/Article/module/selectors/articleDetails';
-import { addCommentFormActions } from 'features/AddNewComment/model/slices/AddCommentSlice';
-import { getAddCommentFormText } from 'features/AddNewComment/model/selectors/AddCommentFormSelectors';
-import { fetchCommentsByArticleId } from '../fetchCommentsByArticleid/fetchCommentsByArticleid';
+import { fetchCommentsByArticleId } from '../fetchCommentsByArticleid/fetchCommentsByArticleId';
 
-export const addCommentForArticle = createAsyncThunk<Comment, void, ThunkConfig<string>>(
+export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(
     'articleDetails/addCommentForArticle',
-    async (authData, thunkApi) => {
+    async (text, thunkApi) => {
         const {
             extra,
             dispatch,
@@ -18,7 +16,6 @@ export const addCommentForArticle = createAsyncThunk<Comment, void, ThunkConfig<
         } = thunkApi;
 
         const userData = getUserAuthData(getState());
-        const text = getAddCommentFormText(getState());
         const article = getArticleDetailsData(getState());
 
         if (!userData || !text || !article) {
@@ -36,7 +33,6 @@ export const addCommentForArticle = createAsyncThunk<Comment, void, ThunkConfig<
                 throw new Error();
             }
 
-            dispatch(addCommentFormActions.setText(''));
             dispatch(fetchCommentsByArticleId(article.id));
 
             return response.data;
@@ -46,4 +42,3 @@ export const addCommentForArticle = createAsyncThunk<Comment, void, ThunkConfig<
         }
     },
 );
-25:50

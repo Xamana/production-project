@@ -11,6 +11,7 @@ export enum ValidateProfileError {
     NO_DATA = 'NO_DATA',
 }
 export interface Profile {
+    id?: string;
     first?: string;
     lastname?: string;
     age?: number;
